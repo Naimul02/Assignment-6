@@ -1,12 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Retro</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro</title>
+
+    <!-- daisy ui and tailwind css -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="container mx-auto">
+      <nav>
+        <div class="navbar bg-base-100">
+          <div class="flex-1">
+            <a class="btn btn-ghost text-2xl">ReTro</a>
+          </div>
+          <div class="flex-none">
+            <ul class="menu menu-horizontal px-1 flex gap-4">
+                <div title="Home">
+                    <img src="images/Frame 2.png" alt="">
+                </div>
+                <div title="edit">
+                    <img src="images/Frame 3.png" alt="">
+                </div>
+                <div title="add">
+                    <img src="images/Frame 4.png" alt="">
+                </div>
+                <div title="flag">
+                    <img src="images/Frame 5.png" alt="">
+                </div>
+                <div>
+                  <button class="btn px-8">Sign In</button>
+                </div>
+               
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container mx-auto">
+      <!-- banner section -->
+      
+      <section class="banner-section bg-[url('images/bgbanner.png')]  bg-no-repeat bg-cover px-[100px] py-[150px] bg-[#12132D] rounded-xl">
+          <div class="flex flex-col lg:flex-row justify-around items-center">
+              <div class="space-y-5">
+                  <h1 class="text-5xl font-bold text-white">Welcome to <br> the <span class="text-blue-800">ReTro</span> Forum</h1>
+                  <p class="text-lg text-white">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
+                  <div>
+                    <label class="input input-bordered flex items-center gap-2">
+                      <input type="text" class="grow" placeholder="Search here anything" />
+                      <span class="badge badge-info py-4 px-4 text-xl">Search</span>
+                    </label>
+                  </div>
+              </div>
+              <div>
+                <div class="card  bg-base-100 lg:w-96">
+                  <div class="card-body">
+                          <div class="flex justify-between text-xl">
+                              <div>
+                                <p>Registered Users</p>
+                              </div>
+                              <div>
+                                <p>01</p>
+                              </div>
+                          </div>
+                          <div class="flex justify-between text-xl">
+                            <div>
+                              <p>Forum</p>
+                            </div>
+                            <div>
+                              <p>05</p>
+                            </div>
+                          </div>
+                          <div class="flex justify-between text-xl">
+                            <div>
+                              <p>Topics</p>
+                            </div>
+                            <div>
+                              <p>01</p>
+                            </div>
+                              
+                              
+                          </div>
+                          <div class="flex justify-between text-xl">
+                              <div>
+
+                                <p>Replies</p>
+                              </div>
+                              <div>
+
+                                <p>01</p>
+                              </div>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          </div>
+      </section>
+
+
+      <!-- let discuss section -->
+      <section id="lets-discuss-section"class="my-20">
+          <div class="text-center">
+              <h1 class="text-5xl font-semibold">
+                Let’s Discuss
+              </h1>
+              <p class="text-xl mt-3">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
+          </div>
+      </section>
+    </main>
+    <footer></footer>
+
+
+    <!-- connected javascript file -->
+    <script src="js/posts.js"></script>
+  </body>
 </html>
