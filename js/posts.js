@@ -1,10 +1,35 @@
-const posts = async () => {
-  const res = await fetch(
-    "https://openapi.programming-hero.com/api/retro-forum/posts"
-  );
-  const data = await res.json();
-  const posts = data.posts;
-  displayPosts(posts);
+const posts = async (searchText) => {
+  console.log(searchText);
+  if (searchText) {
+    const res = await fetch(
+      `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`
+    );
+    const data = await res.json();
+    const posts = data.posts;
+    displayPosts(posts);
+  } else {
+    const res = await fetch(
+      `https://openapi.programming-hero.com/api/retro-forum/posts`
+    );
+    const data = await res.json();
+    const posts = data.posts;
+    displayPosts(posts);
+  }
+};
+
+const handleSearch = async () => {
+  toggleSpinner(true);
+  const fieldElement = document.getElementById("searchField");
+  const fieldValueStr = fieldElement.value;
+  posts(fieldValueStr);
+};
+const toggleSpinner = (isLoading) => {
+  const loading = document.getElementById("circleSpinner");
+  if (isLoading) {
+    loading.classList.remove("hidden");
+  } else {
+    loading.classList.add("hidden");
+  }
 };
 
 const counFn = async (id) => {
@@ -42,7 +67,7 @@ const counFn = async (id) => {
 const displayPosts = (posts) => {
   const discussContainer = document.getElementById("discuss-container");
   // console.log(posts);
-
+  discussContainer.textContent = "";
   posts.forEach((post) => {
     // console.log(post);
     const authorCard = document.createElement("div");
@@ -97,7 +122,7 @@ const displayPosts = (posts) => {
       `;
     discussContainer.appendChild(authorCard);
   });
-
+  toggleSpinner(false);
   latestPosts();
 };
 
@@ -122,7 +147,11 @@ const latestPosts = async () => {
     <div class="card-body">
       <div class="flex gap-3">
           <img src="images/Frame.png" alt="">
-          <p>${latestPost.author.posted_date}</p>
+          <p>${
+            latestPost.author.posted_date
+              ? latestPost.author.posted_date
+              : "No Publish Date"
+          }</p>
 </div>
       <h2 class="card-title">${latestPost.title}</h2>
       <p>${latestPost.description.slice(0, 80)}...</p>
@@ -134,7 +163,11 @@ const latestPosts = async () => {
     </div>
           <div>
               <h3 class="text-xl font-semibold">${latestPost.author.name}</h3>
-              <p>${latestPost.author.designation}</p>
+              <p>${
+                latestPost.author.designation
+                  ? latestPost.author.designation
+                  : "Unknown"
+              }</p>
           </div>
       </div>
     </div>
