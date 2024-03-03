@@ -69,19 +69,33 @@ const displayPosts = (posts) => {
   // console.log(posts);
   discussContainer.textContent = "";
   posts.forEach((post) => {
-    // console.log(post);
+    console.log(post);
+
     const authorCard = document.createElement("div");
     authorCard.classList = `border-2 rounded-3xl flex gap-10 p-6`;
 
     authorCard.innerHTML = `
      
-     
-            <div>
-              <div class="indicator">
-                <span class="indicator-item badge badge-secondary"></span> 
-                <div class="grid w-32 h-32 bg-base-300 place-items-center">
-                    <img src="${post.image}" class="rounded-xl"/>
-                </div>
+        ${
+          post.isActive
+            ? `<div>
+        <div class="indicator">
+          
+          <span class="indicator-item badge  bg-green-600"id="indicator-badge"></span> 
+         
+          <div class="grid w-32 h-32 bg-base-300 place-items-center">
+              <img src="${post.image}" class="rounded-xl"/>
+          </div>`
+            : `<div>
+          <div class="indicator">
+            
+            <span class="indicator-item badge  bg-red-600"id="indicator-badge"></span> 
+           
+            <div class="grid w-32 h-32 bg-base-300 place-items-center">
+                <img src="${post.image}" class="rounded-xl"/>
+            </div>`
+        }
+            
               </div>
             </div>
             <!-- ride side -->
@@ -116,6 +130,8 @@ const displayPosts = (posts) => {
                 </button>
                 </div>
             </div>
+
+           
    
 
 
