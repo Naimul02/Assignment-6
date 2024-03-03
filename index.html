@@ -22,7 +22,11 @@
           <div class="flex-1">
             <a class="btn btn-ghost text-2xl">ReTro</a>
           </div>
-          <div class="flex-none">
+          <!-- menu -->
+          <div class="block lg:hidden">
+            <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+          </div>
+          <div class="flex-none hidden lg:block">
             <ul class="menu menu-horizontal px-1 flex gap-4">
                 <div title="Home">
                     <img src="images/Frame 2.png" alt="">
@@ -49,10 +53,10 @@
     <main class="container mx-auto">
       <!-- banner section -->
       
-      <section class="banner-section bg-[url('images/bgbanner.png')]  bg-no-repeat bg-cover px-[100px] py-[150px] bg-[#12132D] rounded-xl">
+      <section class="banner-section bg-[url('images/bgbanner.png')]  bg-no-repeat bg-cover lg:px-[100px] p-8 lg:py-[150px]  bg-[#12132D] rounded-xl">
           <div class="flex flex-col lg:flex-row justify-around items-center">
               <div class="space-y-5">
-                  <h1 class="text-5xl font-bold text-white">Welcome to <br> the <span class="text-blue-800">ReTro</span> Forum</h1>
+                  <h1 class="text-3xl lg:text-5xl font-bold text-white">Welcome to <br> the <span class="text-blue-800">ReTro</span> Forum</h1>
                   <p class="text-lg text-white">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
                   <div>
                     <label class="input input-bordered flex items-center gap-2">
@@ -61,8 +65,8 @@
                     </label>
                   </div>
               </div>
-              <div>
-                <div class="card  bg-base-100 lg:w-96">
+              <div class="w-full lg:w-96 lg:mt-0 mt-4">
+                <div class="card  bg-base-100 lg:w-96 w-full">
                   <div class="card-body">
                           <div class="flex justify-between text-xl">
                               <div>
@@ -123,7 +127,7 @@
               <span class="loading loading-spinner loading-lg hidden"id="circleSpinner"></span>
             </div>
           <!-- discuss container -->
-          <div class="flex gap-20 mt-6">
+          <div class="flex gap-20 mt-6 flex-col lg:flex-row">
             
             <div id="discuss-container" class="space-y-6">
              
@@ -132,7 +136,7 @@
           
             </div>
 
-            <div id="title-container"class="lg:w-[550px]   p-10 rounded-xl ">
+            <div id="title-container"class="lg:w-[550px]   lg:p-10 p-4 lg:mx-0 lg:rounded-xl ">
                   <div class="flex justify-between items-center">
                       <h1 class="text-2xl font-semibold">Title</h1>
                       <p class="text-xl">Mark as read <span id="count">  0  </span></p>
@@ -151,8 +155,8 @@
 
 
       <!-- Join Our Forum -->
-      <section class="bg-[#12132D] rounded-xl p-[80px]">
-              <div class="flex gap-20 items-center">
+      <section class="bg-[#12132D] rounded-xl  p-10 lg:p-[80px]">
+              <div class="flex flex-col lg:flex-row gap-20 items-center">
                 <div class="space-y-5">
                   <h1 class="text-5xl font-bold text-white">Join Our Forum</h1>
                   <p class="text-lg text-white">Share your favorite opinion and win and wp forum coffee mug! Yes, you can <br> run unit tests and view the results directly within the app. </p>

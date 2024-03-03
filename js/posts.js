@@ -72,18 +72,18 @@ const displayPosts = (posts) => {
     console.log(post);
 
     const authorCard = document.createElement("div");
-    authorCard.classList = `border-2 rounded-3xl flex gap-10 p-6`;
+    authorCard.classList = `border-2 rounded-3xl flex flex-col lg:flex-row gap-4 lg:gap-10 p-4 lg:p-6 mx-4 lg:mx-0`;
 
     authorCard.innerHTML = `
      
         ${
           post.isActive
-            ? `<div>
+            ? `<div class="mx-auto lg:mx-0">
         <div class="indicator">
           
           <span class="indicator-item badge  bg-green-600"id="indicator-badge"></span> 
          
-          <div class="grid w-32 h-32 bg-base-300 place-items-center">
+          <div class="grid lg:w-32 lg:h-32 bg-base-300 place-items-center">
               <img src="${post.image}" class="rounded-xl"/>
           </div>`
             : `<div>
@@ -151,7 +151,7 @@ const latestPosts = async () => {
   // console.log(latestPosts);
 
   const latestCardContainer = document.getElementById("latestPostContainer");
-
+  latestCardContainer.textContent = "";
   latestPosts.forEach((latestPost) => {
     console.log(latestPost);
     const createDiv = document.createElement("div");
