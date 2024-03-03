@@ -66,7 +66,7 @@ const counFn = async (id) => {
 
 const displayPosts = (posts) => {
   const discussContainer = document.getElementById("discuss-container");
-  // console.log(posts);
+  
   discussContainer.textContent = "";
   posts.forEach((post) => {
     console.log(post);
