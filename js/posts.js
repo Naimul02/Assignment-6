@@ -19,7 +19,6 @@ const counFn = async (id) => {
     `https://openapi.programming-hero.com/api/retro-forum/post/${id}`
   );
   const data = await res.json();
-  console.log(data);
 
   const cardContainer = document.getElementById("cardContainer");
   const div = document.createElement("div");
@@ -45,7 +44,7 @@ const displayPosts = (posts) => {
   // console.log(posts);
 
   posts.forEach((post) => {
-    console.log(post);
+    // console.log(post);
     const authorCard = document.createElement("div");
     authorCard.classList = `border-2 rounded-3xl flex gap-10 p-6`;
 
@@ -97,6 +96,51 @@ const displayPosts = (posts) => {
 
       `;
     discussContainer.appendChild(authorCard);
+  });
+
+  latestPosts();
+};
+
+const latestPosts = async () => {
+  const res = await fetch(
+    "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
+  );
+  const data = await res.json();
+  const latestPosts = data;
+  // console.log(latestPosts);
+
+  const latestCardContainer = document.getElementById("latestPostContainer");
+
+  latestPosts.forEach((latestPost) => {
+    console.log(latestPost);
+    const createDiv = document.createElement("div");
+    createDiv.classList = `card  border-2 p-3`;
+    createDiv.innerHTML = `
+    <figure><img src="${
+      latestPost.cover_image
+    }"class="rounded-xl" alt="Shoes" /></figure>
+    <div class="card-body">
+      <div class="flex gap-3">
+          <img src="images/Frame.png" alt="">
+          <p>${latestPost.author.posted_date}</p>
+</div>
+      <h2 class="card-title">${latestPost.title}</h2>
+      <p>${latestPost.description.slice(0, 80)}...</p>
+      <div class="card-actions flex items-center gap-4">
+      <div class="avatar">
+      <div class="w-[60px] rounded-full">
+        <img src="${latestPost.profile_image}" />
+      </div>
+    </div>
+          <div>
+              <h3 class="text-xl font-semibold">${latestPost.author.name}</h3>
+              <p>${latestPost.author.designation}</p>
+          </div>
+      </div>
+    </div>
+      `;
+
+    latestCardContainer.appendChild(createDiv);
   });
 };
 posts();
