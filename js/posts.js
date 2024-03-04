@@ -21,10 +21,14 @@ const handleSearch = async () => {
   toggleSpinner(true);
   const fieldElement = document.getElementById("searchField");
   const fieldValueStr = fieldElement.value;
-  posts(fieldValueStr);
+  setTimeout(() => {
+    posts(fieldValueStr);
+  }, 2000);
+  // posts(fieldValueStr);
 };
 const toggleSpinner = (isLoading) => {
   const loading = document.getElementById("circleSpinner");
+
   if (isLoading) {
     loading.classList.remove("hidden");
   } else {
@@ -102,7 +106,7 @@ const displayPosts = (posts) => {
             <div>
                 <div class="flex gap-6">
                       <p># ${post.category}</p>
-                      <p>${post.author.name}</p>
+                      <p>Author : ${post.author.name}</p>
                 </div>
                 <div class="border-b-2 border-dashed space-y-2 pb-3">
                     <h1 class="text-xl font-semibold">${post.title}</h1>
@@ -121,7 +125,7 @@ const displayPosts = (posts) => {
                     </div>
                     <div class="flex gap-4">
                     <img src="images/clock.png"/>
-                        <p>${post.posted_time}</p>
+                        <p>${post.posted_time} min</p>
                     </div>
                 </div>
 
