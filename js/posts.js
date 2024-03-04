@@ -66,7 +66,7 @@ const counFn = async (id) => {
 
 const displayPosts = (posts) => {
   const discussContainer = document.getElementById("discuss-container");
-  
+
   discussContainer.textContent = "";
   posts.forEach((post) => {
     console.log(post);
@@ -78,20 +78,20 @@ const displayPosts = (posts) => {
      
         ${
           post.isActive
-            ? `<div class="mx-auto lg:mx-0">
-        <div class="indicator">
+            ? `<div class="mx-auto lg:mx-0 w-full lg:w-32">
+        <div class="indicator w-full lg:w-32">
           
           <span class="indicator-item badge  bg-green-600"id="indicator-badge"></span> 
          
-          <div class="grid lg:w-32 lg:h-32 bg-base-300 place-items-center">
+          <div class="grid lg:w-32  lg:h-32  bg-base-300 place-items-center">
               <img src="${post.image}" class="rounded-xl"/>
           </div>`
             : `<div>
-          <div class="indicator">
+          <div class="indicator w-full lg:w-32">
             
             <span class="indicator-item badge  bg-red-600"id="indicator-badge"></span> 
            
-            <div class="grid w-32 h-32 bg-base-300 place-items-center">
+            <div class="grid lg:w-32  lg:h-32  bg-base-300 place-items-center">
                 <img src="${post.image}" class="rounded-xl"/>
             </div>`
         }
