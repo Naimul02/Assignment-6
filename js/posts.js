@@ -115,15 +115,15 @@ const displayPosts = (posts) => {
                 
                 <div class="flex justify-between mt-2">
                   <div class="flex gap-6">
-                    <div class="flex gap-4">
+                    <div class="flex items-center gap-4">
                           <img src="images/msg.png"/>
                         <p>${post.comment_count}</p>
                     </div>
-                    <div class="flex gap-4">
+                    <div class="flex items-center gap-4">
                     <img src="images/eye.png"/>
                         <p>${post.view_count}</p>
                     </div>
-                    <div class="flex gap-4">
+                    <div class="flex items-center gap-4">
                     <img src="images/clock.png"/>
                         <p>${post.posted_time} min</p>
                     </div>
